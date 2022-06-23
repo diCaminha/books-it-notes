@@ -17,4 +17,32 @@ The book focus on three concerns:
 
 
 ### Reliability:
+Continue to work properly, even when things go wrong.
+
+- the application performs what the user expects
+- it can tolerate the user making mistakes or acting in unexpected ways
+- prevents unhautorized access
+
+
+=> Wardware Faults
+- hard disk crashs
+- memory leak
+- power grid has a blackout
+
+The first and immediate response to this type of fault is **redundance**.
+  - disk in RAID configuration
+  - dual power supplies
+  - hot-swappable CPU
+  - datacenters
+
+BUT, nowadays the data volume and application's computing demands increased a lot, and more applications have begun using larger numbers of machines, increasing the rate of hardware faults.
+
+AWS, for instance, where its virtual machine is very common to become unavaliable without even warning.
+(aws prioritize elasticity and flexibility, over single-machine reliability)
+
+
+
+### Software Errors
+
+
 
