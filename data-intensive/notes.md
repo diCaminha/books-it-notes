@@ -43,6 +43,30 @@ AWS, for instance, where its virtual machine is very common to become unavaliabl
 
 
 => Software Errors
+Bugs and broken code
 
+=> Human Errors
+Manual work
+
+
+### Scalability:
+it means considering questions like: if the system grows in a particular way, what are our options for coping with the growth? and how can we add computing resource to handle the additional load?
+
+Describing Load:
+  - requests per second to a web server
+  - number of reads to writes in a database
+  - number of active users at the same time in a chat room
+  - the hit rate on a cache
+
+Sometimes your bottleneck is dominated by a small part of extreme cases:
+#### Twitter's case:
+*In order to deliver the tweets, twitter would should beetween two approaches:
+1. saves the tweet (from author A) in a global/unique place. And any time an follower user from author A goes to his timeline, a query join is done to get the tweets from author A (and all others following authors)
+2. creates a cache timeline for each user. When author A tweet something, this tweet is added to ALL the timeline caches for each following. Then when the user goes to his timeline, it will just get from the cache timeline, super fast.
+
+First, twitter started with the 1 approach. Then, as it scales in number of users and authors, the processe of building a timeline by querying and joing info started to become very painful and expensive. (And twitter promises to deliver a tweet for the following timeline in 5 seconds). So, to solve this problem, twitter adopted the solution 2. BUT, this also didnt work out. Considering famous authors (with millions of followers), imagine how many tweets they send, and how many updates in tweet timelines it will have to apply. Also painful. So, the final/current solution is to get something mixed betweeen solutions 1 and 2. For famous author, do 1. For others, do 2. 
+*
+ 
+  - 
 
 
