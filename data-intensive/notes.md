@@ -67,3 +67,23 @@ In order to deliver the tweets, twitter would should beetween two approaches:
 First, twitter started with the 1 approach. Then, as it scales in number of users and authors, the processe of building a timeline by querying and joing info started to become very painful and expensive. (And twitter promises to deliver a tweet for the following timeline in 5 seconds). So, to solve this problem, twitter adopted the solution 2. BUT, this also didnt work out. Considering famous authors (with millions of followers), imagine how many tweets they send, and how many updates in tweet timelines it will have to apply. Also painful. So, the final/current solution is to get something mixed betweeen solutions 1 and 2. For famous author, do 1. For others, do 2.
 """
 
+Describing Performance:
+
+*response time*
+  > The time between the user sending a request and receiving a response form the online system.
+
+We need to measure response time not only based in a single number. But as a distribution of many analysis, that you can measure.
+
+It's common to see the average of response time. Some use the mean to calculate it, but it is not the best way. Because we need to get a value that most of the users wait, and the mean doesnt tell us how many actually experience that delay. 
+for example: Suppos 90% of the users experience a response time of 100ms, and a single request expend 5s. So this unique expensive request will elevate the mean. 
+
+a better way to measure is using the **median**.
+
+
+Curiosity: Amazon had notice that 100ms increase in response time reduce sales in 1%, and 1s increase response time reduce in 16%
+
+Percentiles is very used in SLA and SLO
+
+Example of contract:
+ - the service is considered to be up if it has a median response time of 300ms
+ - the service is considered to be up if has a percentiles of 99th under 1s
